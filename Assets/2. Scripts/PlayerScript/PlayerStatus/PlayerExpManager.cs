@@ -4,31 +4,23 @@ using UnityEngine;
 
 public class PlayerExpManager : MonoBehaviour
 {
-    public static PlayerExpManager playerExpManager;
-
-    private int level;
-    protected int exp;
-    protected int maxExp;
-    private float expMult;
+    private int level;//플레이어 레벨
+    [SerializeField] internal int exp;// 플레이어 경험치
+    [SerializeField] internal int maxExp;// 레벨업을 위해 필요한 경험치
+    [SerializeField]internal float expMult;// 경험치 배수
     [SerializeField] protected int IncreaseExpLimit;//레벨업시에 증가하는 경험치 최대치 
 
     void Awake()
     {
-        DontDestroyOnLoad(gameObject);
-        if (playerExpManager == null)
-        {
-            playerExpManager = this;
-        }
-        else if (playerExpManager != this)
-        {
-            Destroy(gameObject);
-        }
+        exp = 0;
+        maxExp = 50;//초기 경험치와 초기 필요 경험치
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        exp = 0;
+      
     }
 
     // Update is called once per frame
@@ -49,13 +41,9 @@ public class PlayerExpManager : MonoBehaviour
 
     public void LevelUp() // 레벨업 함수
     {
-        float hp = GetComponent<PlayerHpManager>().hp;
-        int maxHp = GetComponent<PlayerHpManager>().maxHp;
-        int damage = GetComponent<PlayerDamageManager>().damage;
-
-        hp += 100;
-        maxHp += 100;
-        damage += 10;
         level += 1;
+        GameObject.Find("PlayerStatus").GetComponent<PlayerHpManager>().currentHp += 100;
+        GameObject.Find("PlayerStatus").GetComponent<PlayerHpManager>().maxHp += 100;
+        GameObject.Find("PlayerStatus").GetComponent<PlayerDamageManager>().damage += 10;
     }
 }

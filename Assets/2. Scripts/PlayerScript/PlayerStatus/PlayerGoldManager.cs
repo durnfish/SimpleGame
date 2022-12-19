@@ -4,22 +4,8 @@ using UnityEngine;
 
 public class PlayerGoldManager : MonoBehaviour
 {
-    public static PlayerGoldManager playerGoldManager;
 
-    [SerializeField] protected int gold;
-
-    void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-        if (playerGoldManager == null)
-        {
-            playerGoldManager = this;
-        }
-        else if (playerGoldManager != this)
-        {
-            Destroy(gameObject);
-        }
-    }
+    [SerializeField] protected int gold; //플레이어 소유 골드
 
     public int Gold { get { return gold; } set { gold = value; } }
     // Start is called before the first frame update

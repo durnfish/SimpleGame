@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class ExpSlider : PlayerExpManager
 {
-    public GameObject other;
-    public Slider expShow;
+    public GameObject other; // 경험치 슬라이더 표시 할 대상
+    public Slider expShow; // 경험치 슬라이더가 표시 될 슬라이더 위치
 
     private void Awake()
     {
@@ -15,12 +15,13 @@ public class ExpSlider : PlayerExpManager
     // Start is called before the first frame update
     void Start()
     {
-        expShow.gameObject.SetActive(true);
+        expShow.gameObject.SetActive(true); //경험치 슬라이더 활성화
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        expShow.value = (float)exp / maxExp;
+        expShow.value = (float)exp / maxExp;//경험치 슬라이더 업데이트
     }
 }

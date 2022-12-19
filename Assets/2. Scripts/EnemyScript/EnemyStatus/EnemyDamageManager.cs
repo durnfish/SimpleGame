@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyDamageManager : MonoBehaviour
 {
-    [SerializeField] protected int damage;
-    [SerializeField] protected float attackSpeed;
+    [SerializeField] protected int damage;//몬스터 공격력
+    [SerializeField] protected float attackSpeed;//몬스터 공격속도 구현 여부?
 
     public int Damage { get { return damage; } set { damage = value; } }
     public float AttackSpeed { get { return attackSpeed; } set { attackSpeed = value; } }
