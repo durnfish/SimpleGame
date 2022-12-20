@@ -56,23 +56,16 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\2. Scripts\PlayerScript\PlayerStatus\PlayerExpManager.cs" />
+    <Compile Include="Assets\2. Scripts\DontDestroyObject.cs" />
     <Compile Include="Assets\2. Scripts\HpManager.cs" />
     <Compile Include="Assets\2. Scripts\PlayerScript\ExpSlider.cs" />
-    <Compile Include="Assets\2. Scripts\PlayerScript\PlayerStatus\PlayerDamageManager.cs" />
     <Compile Include="Assets\2. Scripts\BattleManager.cs" />
-    <Compile Include="Assets\2. Scripts\EnemyScript\EnemyStatus\EnemyHpManager.cs" />
-    <Compile Include="Assets\2. Scripts\map\BattleSceneChange.cs" />
-    <Compile Include="Assets\2. Scripts\EnemyScript\EnemyStatus\EnemyGoldManager.cs" />
-    <Compile Include="Assets\2. Scripts\PlayerScript\PlayerStatus\PlayerHpManager.cs" />
-    <Compile Include="Assets\2. Scripts\EnemyScript\EnemyStatus\EnemyExpManager.cs" />
-    <Compile Include="Assets\2. Scripts\PlayerScript\PlayerStatus\PlayerGoldManager.cs" />
+    <Compile Include="Assets\2. Scripts\EnemyScript\EnemyObject.cs" />
+    <Compile Include="Assets\2. Scripts\PlayerScript\PlayerObject.cs" />
     <Compile Include="Assets\2. Scripts\map\MapManager.cs" />
     <Compile Include="Assets\2. Scripts\PlayerScript\ExpText.cs" />
     <Compile Include="Assets\2. Scripts\PlayerScript\HpText.cs" />
     <Compile Include="Assets\2. Scripts\HpSlider.cs" />
-    <Compile Include="Assets\2. Scripts\EnemyScript\EnemyStatus\EnemyDamageManager.cs" />
-    <Compile Include="Assets\2. Scripts\DontSestroyOnload.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

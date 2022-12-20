@@ -6,15 +6,14 @@ using UnityEngine.UI;
 public class HpSlider : MonoBehaviour
 {
     public GameObject other;//체력 슬라이더가 표시할 대상
-    internal int currentHp;
-    internal int maxHp;
+    float currentHp;
+    float maxHp;
 
     public Slider hpshow;//체력 슬라이더가 표시 될 슬라이더 위치
 
     void Awake()
     {
-        currentHp = other.GetComponent<HpManager>().currentHp;
-        maxHp = other.GetComponent<HpManager>().maxHp;
+        
     }
     // Start is called before the first frame update
     void Start()
@@ -27,6 +26,8 @@ public class HpSlider : MonoBehaviour
     // Update is called once per frame
     internal void Update()
     {
+        currentHp = PlayerObject.player.currentHp;
+        maxHp = PlayerObject.player.maxHp;
         hpshow.value = (float)currentHp / maxHp; // 체력 슬라이더 업데이트
     }
 }

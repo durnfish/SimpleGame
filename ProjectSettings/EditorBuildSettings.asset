@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/1. Scenes/Map.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/1. Scenes/Battle.unity
+    guid: 348bd2d72fc1a93449cde22ee4ab21e9
+  - enabled: 1
+    path: Assets/1. Scenes/Shop.unity
+    guid: 6e6c896805eb4fa43bef3bebe8d74dd6
+  - enabled: 1
+    path: Assets/1. Scenes/Treasure.unity
+    guid: b4aac936414159c41a8c370d742f9e9a
   m_configObjects: {}
