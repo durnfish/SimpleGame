@@ -16,7 +16,7 @@ public class ExpText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        expText.text = PlayerObject.player.exp 
+        expText.text = PlayerObject.player.playerExp 
                      + " / "
                      + PlayerObject.player.maxExp;// 경험치 업데이트
     }

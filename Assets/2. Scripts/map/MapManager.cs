@@ -18,6 +18,7 @@ public class MapManager : MonoBehaviour
         Debug.Log(roomNum1);
         Debug.Log(roomNum2);
         Debug.Log(roomNum3);
+        Debug.Log("경험치: "+PlayerObject.player.playerExp);
     }
 
     void ChangeMapScene() // 기본 맵으로 돌아가는 함수

@@ -4,16 +4,7 @@ using UnityEngine.SceneManagement;
 public class BattleManager : MonoBehaviour
 {
     public Animator anime;
-
-    [SerializeField] GameObject enemy;
-    [SerializeField] GameObject player;
-    //[SerializeField] GameObject enemyHpUpdate;
-    //[SerializeField] GameObject playerHpUpdate;
-    
-    float currentPlayerHp;
-    float currentEnemyHp;
-    bool a = false;
-    bool b = false;
+    bool battleCheck = false;
 
   
     // Start is called before the first frame update
@@ -27,29 +18,15 @@ public class BattleManager : MonoBehaviour
     {
         if (Input.GetKey("x"))
         {
-            if (a==false)
+            if (battleCheck==false)
             {
                 Battle();
-                Debug.Log(PlayerObject.player.currentHp);
-                a = true;
+                battleCheck = true;
             }
         }
         else
         {
-            a = false;
-        }
-
-        if (Input.GetKey("a"))
-        {
-            if (b == false)
-            {
-                SceneManager.LoadScene("Map");
-                b = true;
-            }
-        }
-        else
-        {
-            b = false;
+            battleCheck = false;
         }
     }
 
@@ -57,21 +34,39 @@ public class BattleManager : MonoBehaviour
     {
         EnemyObject.enemy.HpDownChanger(PlayerObject.player.playerATKPoint);
         //anime.SetTrigger("EnemyAtacked");
-        currentEnemyHp = EnemyObject.enemy.currentHp;
     }
 
     void EnemyAttack()//몬스터가 공격할때, 플레이어 체력 감소 함수
     {
         PlayerObject.player.HpDownChanger(EnemyObject.enemy.enemyATKPoint);
         //anime.SetBool("EnemyAtack", true);
-        currentPlayerHp = PlayerObject.player.currentHp;
     }
 
-    public void Battle()//전투 함수
+    void Battle()//전투 함수
     {
-            PlayerAtack();
-           // enemyHpUpdate.GetComponent<HpSlider>().Update();
-            Invoke("EnemyAttack", 1f);
-           // playerHpUpdate.GetComponent<HpSlider>().Update();
+        EnemyAttack();
+        PlayerDead();
+
+        PlayerAtack();
+        EnemyDead();
+    }
+
+    void PlayerDead()
+    {
+        if (PlayerObject.player.currentHp == 0)
+        {
+            PlayerObject.player.Reset();
+            SceneManager.LoadScene("Map");
+        }
+    }
+
+    void EnemyDead()
+    {
+        if (EnemyObject.enemy.currentHp == 0)
+        {
+            PlayerObject.player.ExpGain(EnemyObject.enemy.exp);
+            EnemyObject.enemy.currentHp = EnemyObject.enemy.maxHp;
+            SceneManager.LoadScene("Map");
+        }
     }
 }

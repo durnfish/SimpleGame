@@ -22,7 +22,7 @@ public class ExpSlider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float exp = PlayerObject.player.exp;
+        float exp = PlayerObject.player.playerExp;
         float maxExp = PlayerObject.player.maxExp;
         expShow.value = exp / maxExp;//경험치 슬라이더 업데이트
     }

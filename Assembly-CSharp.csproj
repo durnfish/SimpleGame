@@ -65,7 +65,9 @@
     <Compile Include="Assets\2. Scripts\map\MapManager.cs" />
     <Compile Include="Assets\2. Scripts\PlayerScript\ExpText.cs" />
     <Compile Include="Assets\2. Scripts\PlayerScript\HpText.cs" />
-    <Compile Include="Assets\2. Scripts\HpSlider.cs" />
+    <Compile Include="Assets\2. Scripts\PlayerScript\HpSlider.cs" />
+    <Compile Include="Assets\2. Scripts\EnemyScript\EnemyHpText.cs" />
+    <Compile Include="Assets\2. Scripts\EnemyScript\EnemyHpSlider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -11,7 +11,6 @@ public class PlayerObject : MonoBehaviour
     public float playerATKPoint;
     public float playerATKSpeed;
     public float playerExp;
-    public float exp;
     public float maxExp;
     public float expMulti;
     public float gold;
@@ -25,6 +24,7 @@ public class PlayerObject : MonoBehaviour
         {
             player = this;
         }
+        Reset();
     }
 
     void Start()
@@ -69,19 +69,32 @@ public class PlayerObject : MonoBehaviour
     //경험치 블록
     public void ExpGain(float expGain) //경험치 획득 함수
     {
-        exp += expGain;
-        if (exp >= maxExp)
+        playerExp += expGain * expMulti;
+        if (playerExp >= maxExp)
         {
             LevelUp();
-            maxExp += 50;
+            playerExp = 0;
+            maxExp += 30;
         }
     }
 
     public void LevelUp() // 레벨업 함수
     {
         level += 1;
-        currentHp += 100;
-        maxHp += 100;
+        currentHp += 25;
+        maxHp += 50;
         playerATKPoint += 10;
+    }
+    //게임 초기화
+    public void Reset()
+    {
+        currentHp = 100;
+        maxHp = 100;
+        playerATKPoint = 10;
+        playerATKSpeed = 1;
+        playerExp = 0;
+        maxExp = 30;
+        expMulti = 1;
+        gold = 10;
     }
 }
