@@ -58,7 +58,6 @@ public class PlayerObject : MonoBehaviour
     public void MaxHpUp(float changeHp)// 최대체력 증가
     {
         maxHp += changeHp;
-        if (currentHp > maxHp) currentHp = maxHp;
     }
 
     public void MaxHpDown(float changeHp)// 최대체력 감소
@@ -95,6 +94,7 @@ public class PlayerObject : MonoBehaviour
         playerExp = 0;
         maxExp = 30;
         expMulti = 1;
-        gold = 10;
+        gold = 50;
+
     }
 }

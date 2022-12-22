@@ -27,7 +27,7 @@ public class MapManager : MonoBehaviour
     }
 
 
-    internal void SceneChaner(int x) //들어오는 숫자에 따라 방을 전환하는 함수
+    void SceneChaner(int x) //들어오는 숫자에 따라 방을 전환하는 함수
     {
         switch (x)
         {

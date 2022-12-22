@@ -57,17 +57,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\2. Scripts\DontDestroyObject.cs" />
+    <Compile Include="Assets\2. Scripts\EnemyScript\EnemyHpText.cs" />
     <Compile Include="Assets\2. Scripts\HpManager.cs" />
     <Compile Include="Assets\2. Scripts\PlayerScript\ExpSlider.cs" />
+    <Compile Include="Assets\2. Scripts\EnemyScript\EnemyHpSlider.cs" />
     <Compile Include="Assets\2. Scripts\BattleManager.cs" />
     <Compile Include="Assets\2. Scripts\EnemyScript\EnemyObject.cs" />
     <Compile Include="Assets\2. Scripts\PlayerScript\PlayerObject.cs" />
-    <Compile Include="Assets\2. Scripts\map\MapManager.cs" />
+    <Compile Include="Assets\2. Scripts\Map\MapManager.cs" />
     <Compile Include="Assets\2. Scripts\PlayerScript\ExpText.cs" />
     <Compile Include="Assets\2. Scripts\PlayerScript\HpText.cs" />
     <Compile Include="Assets\2. Scripts\PlayerScript\HpSlider.cs" />
-    <Compile Include="Assets\2. Scripts\EnemyScript\EnemyHpText.cs" />
-    <Compile Include="Assets\2. Scripts\EnemyScript\EnemyHpSlider.cs" />
+    <Compile Include="Assets\2. Scripts\PlayerScript\goldUi.cs" />
+    <Compile Include="Assets\2. Scripts\Item\AttakPointUp.cs" />
+    <Compile Include="Assets\2. Scripts\Item\HpPointUp.cs" />
+    <Compile Include="Assets\2. Scripts\Item\HealingItem.cs" />
+    <Compile Include="Assets\2. Scripts\Item\Gold.cs" />
+    <Compile Include="Assets\2. Scripts\Item\ItemMagnager.cs" />
+    <Compile Include="Assets\2. Scripts\Shop\ShopManamger.cs" />
+    <Compile Include="Assets\2. Scripts\GameManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
