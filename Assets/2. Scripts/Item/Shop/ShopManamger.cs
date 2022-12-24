@@ -13,9 +13,14 @@ public class ShopManamger : MonoBehaviour
     public Sprite heal;
     public Text price1, price2, price3;
     public GameObject slot1, slot2, slot3;
+    [SerializeField] Item ATK, MaxHp;
+    [SerializeField] GameObject items;
+    InventoryManager inventory;
+
     // Start is called before the first frame update
     void Start()
     {
+        inventory = InventoryManager.inventory;
         itemSlot1 = Random.Range(1, 4);
         Invoke("",0.01f);
         itemSlot2 = Random.Range(1, 4);
@@ -30,7 +35,15 @@ public class ShopManamger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            items.SetActive(false);
+        }
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            items.SetActive(true);
+
+        }
     }
     void ItemSlot(int itemSlotNum, Image image, Text text)
     {
@@ -56,6 +69,7 @@ public class ShopManamger : MonoBehaviour
                 {
                     PlayerObject.player.gold -= AttakPointUp.attakPointUp.price;
                     AttakPointUp.attakPointUp.AttackPointUP();
+                    inventory.AddItem(ATK);
                 }
                 break;
             case 2:
@@ -63,6 +77,7 @@ public class ShopManamger : MonoBehaviour
                 {
                     PlayerObject.player.gold -= HpPointUp.hpPointUp.price;
                     HpPointUp.hpPointUp.MaxHpUp();
+                    inventory.AddItem(MaxHp);
                 }
                 break;
             case 3:

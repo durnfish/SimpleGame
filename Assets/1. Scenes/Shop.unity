@@ -1489,6 +1489,9 @@ MonoBehaviour:
   slot1: {fileID: 1622949318}
   slot2: {fileID: 742901913}
   slot3: {fileID: 790742892}
+  ATK: {fileID: 11400000, guid: 76d2a07702b889c48946c6d0fc47d804, type: 2}
+  MaxHp: {fileID: 11400000, guid: 0d183f2526d189542bbb75a9a118a47e, type: 2}
+  items: {fileID: 1931253910}
 --- !u!4 &1643881370
 Transform:
   m_ObjectHideFlags: 0

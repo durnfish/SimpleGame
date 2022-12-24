@@ -407,6 +407,9 @@ MonoBehaviour:
   maxHpUp: {fileID: 21300000, guid: 75f3205da4d77cb40b448d7cc6d87bfb, type: 3}
   heal: {fileID: 21300000, guid: d2d2231d9ea122c4a945d3e5b76718b3, type: 3}
   gold: {fileID: 21300000, guid: 264745156bc6f6a40a16ae14e6012d2f, type: 3}
+  ATK: {fileID: 11400000, guid: 76d2a07702b889c48946c6d0fc47d804, type: 2}
+  MaxHp: {fileID: 11400000, guid: 0d183f2526d189542bbb75a9a118a47e, type: 2}
+  items: {fileID: 712210218}
 --- !u!4 &948353891
 Transform:
   m_ObjectHideFlags: 0

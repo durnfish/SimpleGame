@@ -4,9 +4,9 @@ using UnityEngine.SceneManagement;
 public class BattleManager : MonoBehaviour
 {
     public Animator anime;
-    //bool battleCheck = false;
+    [SerializeField] GameObject enemy, battle;
 
-  
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +16,16 @@ public class BattleManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            enemy.SetActive(false);
+            battle.SetActive(false);
+        }
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            enemy.SetActive(true);
+            battle.SetActive(true);
+        }
     }
 
     void PlayerAtack()//플레이어가 공격할때, 몬스터 체력 감소 함수

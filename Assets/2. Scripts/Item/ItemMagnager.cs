@@ -6,15 +6,21 @@ using UnityEngine.SceneManagement;
 
 public class ItemMagnager : MonoBehaviour
 {
+
     int itemNum;
     public Image image;
     public Sprite atk;
     public Sprite maxHpUp;
     public Sprite heal;
     public Sprite gold;
+
+    [SerializeField] Item ATK, MaxHp;
+    [SerializeField] GameObject items;
+    InventoryManager inventory;
     // Start is called before the first frame update
     void Start()
     {
+        inventory = InventoryManager.inventory;
         itemNum = Random.Range(1, 5);
         ItemSpwan();
         
@@ -23,7 +29,14 @@ public class ItemMagnager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            items.SetActive(false);
+        }
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            items.SetActive(true);
+        }
     }
 
     public void ItemSpwan()
@@ -46,8 +59,10 @@ public class ItemMagnager : MonoBehaviour
         switch (itemNum)
         {
             case 1:AttakPointUp.attakPointUp.AttackPointUP();
+                inventory.AddItem(ATK);
                 break;
             case 2:HpPointUp.hpPointUp.MaxHpUp();
+                inventory.AddItem(MaxHp);
                 break;
             case 3:HealingItem.healingItem.Healing();
                 break;
