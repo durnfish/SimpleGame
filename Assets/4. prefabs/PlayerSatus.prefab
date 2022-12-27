@@ -49,7 +49,6 @@ MonoBehaviour:
   playerATKPoint: 0
   playerATKSpeed: 0
   playerExp: 0
-  exp: 0
   maxExp: 100
   expMulti: 1
   gold: 0

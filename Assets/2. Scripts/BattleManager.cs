@@ -3,14 +3,16 @@ using UnityEngine.SceneManagement;
 
 public class BattleManager : MonoBehaviour
 {
-    public Animator anime;
+    public GameObject idle, attacked, hpBar;
     [SerializeField] GameObject enemy, battle;
+    readonly CursorScript cursor = CursorScript.cursor;
 
 
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("start");
+        attacked.SetActive(false);
     }
 
     // Update is called once per frame
@@ -42,14 +44,18 @@ public class BattleManager : MonoBehaviour
 
     public void Battle()//전투 함수
     {
-        EnemyAttack();
-        PlayerDead();
+        if (!IsInvoking())
+        {
+            EnemyAttack();
+            PlayerDead();
 
-        PlayerAtack();
-        EnemyDead();
+            PlayerAtack();
+            Animation();
+            EnemyDead();
+        }
     }
 
-    public void playerHeal()
+    public void PlayerHeal()
     {
         EnemyAttack();
         PlayerDead();
@@ -62,6 +68,7 @@ public class BattleManager : MonoBehaviour
         {
             PlayerObject.player.Reset();
             SceneManager.LoadScene("Map");
+            cursor.DefautCursor();
         }
     }
 
@@ -69,10 +76,30 @@ public class BattleManager : MonoBehaviour
     {
         if (EnemyObject.enemy.currentHp == 0)
         {
-            PlayerObject.player.ExpGain(EnemyObject.enemy.exp);
-            PlayerObject.player.gold += EnemyObject.enemy.gold;
-            EnemyObject.enemy.currentHp = EnemyObject.enemy.maxHp;
-            SceneManager.LoadScene("Map");
+            hpBar.SetActive(false);
+            Invoke("GoHome", 1.0f);
         }
+    }
+    void GoHome()
+    {
+        PlayerObject.player.ExpGain(EnemyObject.enemy.exp);
+        PlayerObject.player.gold += EnemyObject.enemy.gold;
+        EnemyObject.enemy.currentHp = EnemyObject.enemy.maxHp;
+        SceneManager.LoadScene("Map");
+    }
+    void Animation()
+    {
+        AttackedState();
+        Invoke("IdleState",1.2f);
+    }
+    void AttackedState()
+    {
+        idle.SetActive(false);
+        attacked.SetActive(true);
+    }
+    void IdleState()
+    {
+        attacked.SetActive(false);
+        idle.SetActive(true);
     }
 }

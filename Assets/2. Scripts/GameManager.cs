@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject map;
     private void Awake()
     {
-        
+        Cursor.visible = true;
     }
     // Start is called before the first frame update
     void Start()

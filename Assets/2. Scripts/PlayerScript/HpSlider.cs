@@ -11,10 +11,6 @@ public class HpSlider : MonoBehaviour
 
     public Slider hpshow;//체력 슬라이더가 표시 될 슬라이더 위치
 
-    void Awake()
-    {
-        
-    }
     // Start is called before the first frame update
     void Start()
     {

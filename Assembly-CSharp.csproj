@@ -62,11 +62,14 @@
     <Compile Include="Assets\2. Scripts\PlayerScript\ExpSlider.cs" />
     <Compile Include="Assets\2. Scripts\Item\Inventory\InventoryManager.cs" />
     <Compile Include="Assets\2. Scripts\Item\Shop\ShopManamger.cs" />
+    <Compile Include="Assets\2. Scripts\Map\slot1.cs" />
+    <Compile Include="Assets\2. Scripts\Map\slot2.cs" />
     <Compile Include="Assets\2. Scripts\EnemyScript\EnemyHpSlider.cs" />
     <Compile Include="Assets\2. Scripts\Item\HpPointUp.cs" />
     <Compile Include="Assets\2. Scripts\BattleManager.cs" />
     <Compile Include="Assets\2. Scripts\EnemyScript\EnemyObject.cs" />
     <Compile Include="Assets\2. Scripts\Item\Gold.cs" />
+    <Compile Include="Assets\2. Scripts\Map\slot.cs" />
     <Compile Include="Assets\2. Scripts\PlayerScript\PlayerObject.cs" />
     <Compile Include="Assets\2. Scripts\PlayerScript\goldUi.cs" />
     <Compile Include="Assets\2. Scripts\GameManager.cs" />
@@ -75,32 +78,10 @@
     <Compile Include="Assets\2. Scripts\PlayerScript\ExpText.cs" />
     <Compile Include="Assets\2. Scripts\PlayerScript\HpText.cs" />
     <Compile Include="Assets\2. Scripts\Item\HealingItem.cs" />
+    <Compile Include="Assets\2. Scripts\CursorScript.cs" />
     <Compile Include="Assets\2. Scripts\PlayerScript\HpSlider.cs" />
     <Compile Include="Assets\2. Scripts\Item\ItemMagnager.cs" />
     <Compile Include="Assets\2. Scripts\Item\Inventory\Slot.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
-    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
-    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
-    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
-    <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
