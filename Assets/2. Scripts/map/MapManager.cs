@@ -15,10 +15,7 @@ public class MapManager : MonoBehaviour
         roomNum1 = Random.Range(1, 4);
         roomNum2 = Random.Range(1, 4);
         roomNum3 = Random.Range(1, 4);
-        AnimationLoad(slot1, roomNum1);
-        AnimationLoad(slot2, roomNum2);
-        AnimationLoad(slot3, roomNum3);
-
+        AllLoad();
     }
     void SceneChaner(int x) //들어오는 숫자에 따라 방을 전환하는 함수
     {
@@ -26,35 +23,38 @@ public class MapManager : MonoBehaviour
         {
             case 1:
                 SceneManager.LoadScene("Battle");
-                Debug.Log("1");
                 break;
             case 2:
                 SceneManager.LoadScene("Shop");
-                Debug.Log("2");
                 break;
             case 3:
                 SceneManager.LoadScene("Treasure");
-                Debug.Log("3");
                 break;
         }
     }
-    void AnimationLoad(Animator animation, int roomNum)
+    void AnimationLoad(Animator slot, int roomNum)
     {
         switch (roomNum)
         {
             case 1:
-                animation.SetInteger("state",1);
+                slot.SetInteger("state",1);
                 Debug.Log("1");
                 break;
             case 2:
-                animation.SetInteger("state",2);
+                slot.SetInteger("state", 2);
                 Debug.Log("2");
                 break;
             case 3:
-                animation.SetInteger("state",3);
+                slot.SetInteger("state", 3);
                 Debug.Log("3");
                 break;
         }
+    }
+    void AllLoad()
+    {
+        AnimationLoad(slot1, roomNum1);
+        AnimationLoad(slot2, roomNum2);
+        AnimationLoad(slot3, roomNum3);
     }
 
     public void ChangeRoomNumber1()//버튼1에서 씬 체인지를 위한 함수

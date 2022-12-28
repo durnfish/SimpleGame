@@ -33,13 +33,11 @@ public class BattleManager : MonoBehaviour
     void PlayerAtack()//플레이어가 공격할때, 몬스터 체력 감소 함수
     {
         EnemyObject.enemy.HpDownChanger(PlayerObject.player.playerATKPoint);
-        //anime.SetTrigger("EnemyAtacked");
     }
 
     void EnemyAttack()//몬스터가 공격할때, 플레이어 체력 감소 함수
     {
         PlayerObject.player.HpDownChanger(EnemyObject.enemy.enemyATKPoint);
-        //anime.SetBool("EnemyAtack", true);
     }
 
     public void Battle()//전투 함수

@@ -405,9 +405,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 237940153}
-  atk: {fileID: 21300000, guid: 335118b52efaa2e40894b90ec06e02a6, type: 3}
+  atk: {fileID: 21300000, guid: 28c5adeb001ee05419e553b6810c12e9, type: 3}
   maxHpUp: {fileID: 21300000, guid: 75f3205da4d77cb40b448d7cc6d87bfb, type: 3}
-  heal: {fileID: 21300000, guid: d2d2231d9ea122c4a945d3e5b76718b3, type: 3}
+  heal: {fileID: 21300000, guid: 6947d9a5d49f0a54e8990468620dc903, type: 3}
   gold: {fileID: 21300000, guid: 264745156bc6f6a40a16ae14e6012d2f, type: 3}
   ATK: {fileID: 11400000, guid: 76d2a07702b889c48946c6d0fc47d804, type: 2}
   MaxHp: {fileID: 11400000, guid: 0d183f2526d189542bbb75a9a118a47e, type: 2}

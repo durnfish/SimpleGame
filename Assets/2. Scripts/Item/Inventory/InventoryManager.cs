@@ -2,29 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager inventory;
-
     public List<Item> items;
 
-    [SerializeField]
-    private Transform slotParent;
-
-    [SerializeField]
-    private Slot[] slots;
-
+    [SerializeField] private Transform slotParent;
+    [SerializeField] private Slot[] slots;
     [SerializeField] GameObject popUp, playerUi;
     [SerializeField] Text atk, maxHp;
-
+    [SerializeField] Animator slot1, slot2, slot3;
+    int room1, room2, room3;
+    MapManager map;
+    bool flag = false;
     private void OnValidate()
     {
         slots = slotParent.GetComponentsInChildren<Slot>();
     }
      void Awake()
     {
+        map = GetComponent<MapManager>();
         if(inventory == null)
         {
             inventory = this;
@@ -41,17 +41,24 @@ public class InventoryManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I)){
-            popUp.SetActive(true);
-            playerUi.SetActive(false);
-        }
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (flag == false)
         {
-            popUp.SetActive(false);
-            playerUi.SetActive(true);
+            flag = true;
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                GetRoomNum();
+                playerStatusShow();
+                popUp.SetActive(true);
+                playerUi.SetActive(false);
+            }
+            if (Input.GetKeyDown(KeyCode.Tab))
+            {
+                popUp.SetActive(false);
+                playerUi.SetActive(true);
+                StartAnimation();
+            }
         }
-
-        playerStatusShow();
+        else flag = false;
     }
 
     public void FreshSlot()
@@ -82,5 +89,24 @@ public class InventoryManager : MonoBehaviour
     {
         atk.text = "공격력: "+ PlayerObject.player.playerATKPoint;
         maxHp.text = "최대 체력:" + PlayerObject.player.maxHp;
+    }
+    void GetRoomNum()
+    {
+        room1 = slot1.GetInteger("state");
+        room1 = slot2.GetInteger("state");
+        room1 = slot3.GetInteger("state");
+        Debug.Log(room1);
+        Debug.Log(room2);
+        Debug.Log(room3);
+    }
+
+    void StartAnimation()
+    {
+        if(SceneManager.GetActiveScene().name == "map")
+        {
+            slot1.SetInteger("state", room1);
+            slot2.SetInteger("state", room2);
+            slot3.SetInteger("state", room3);
+        }
     }
 }
