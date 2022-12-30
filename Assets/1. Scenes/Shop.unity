@@ -1483,7 +1483,7 @@ MonoBehaviour:
   image2: {fileID: 742901915}
   image3: {fileID: 790742894}
   atk: {fileID: 21300000, guid: 28c5adeb001ee05419e553b6810c12e9, type: 3}
-  maxHpUp: {fileID: 21300000, guid: 75f3205da4d77cb40b448d7cc6d87bfb, type: 3}
+  maxHpUp: {fileID: 21300000, guid: 39bad0f72e05c944e91be66b2e4e87ed, type: 3}
   heal: {fileID: 21300000, guid: 6947d9a5d49f0a54e8990468620dc903, type: 3}
   price1: {fileID: 759496080}
   price2: {fileID: 2128527588}

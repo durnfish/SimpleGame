@@ -17,7 +17,6 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] Animator slot1, slot2, slot3;
     int room1, room2, room3;
     MapManager map;
-    bool flag = false;
     private void OnValidate()
     {
         slots = slotParent.GetComponentsInChildren<Slot>();
@@ -41,13 +40,8 @@ public class InventoryManager : MonoBehaviour
 
     private void Update()
     {
-        if (flag == false)
-        {
-            flag = true;
             if (Input.GetKeyDown(KeyCode.I))
             {
-                GetRoomNum();
-                playerStatusShow();
                 popUp.SetActive(true);
                 playerUi.SetActive(false);
             }
@@ -55,10 +49,8 @@ public class InventoryManager : MonoBehaviour
             {
                 popUp.SetActive(false);
                 playerUi.SetActive(true);
-                StartAnimation();
             }
-        }
-        else flag = false;
+        playerStatusShow();
     }
 
     public void FreshSlot()

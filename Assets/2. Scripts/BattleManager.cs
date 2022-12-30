@@ -1,17 +1,22 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class BattleManager : MonoBehaviour
 {
     public GameObject idle, attacked, hpBar;
     [SerializeField] GameObject enemy, battle;
+    [SerializeField] GameObject counter1, counter2, counter3;
+    [SerializeField] GameObject Line1, Line2;
     readonly CursorScript cursor = CursorScript.cursor;
-
+    int index;
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("start");
+        PlayerObject.player.index += 1;
+        index = PlayerObject.player.index;
+        SetCounter(index);
         attacked.SetActive(false);
     }
 
@@ -64,6 +69,7 @@ public class BattleManager : MonoBehaviour
     {
         if (PlayerObject.player.currentHp == 0)
         {
+            PlayerObject.player.index = 0;
             PlayerObject.player.Reset();
             SceneManager.LoadScene("Map");
             cursor.DefautCursor();
@@ -76,6 +82,35 @@ public class BattleManager : MonoBehaviour
         {
             hpBar.SetActive(false);
             Invoke("GoHome", 1.0f);
+        }
+    }
+    void SetCounter(int index)
+    {
+        int counter = index % 3;
+       
+        switch (counter)
+        {
+            case 1:
+                counter1.SetActive(true);
+                Line1.SetActive(false);
+                counter2.SetActive(false);
+                Line2.SetActive(false);
+                counter3.SetActive(false);
+                break;
+            case 2:
+                counter1.SetActive(true);
+                Line1.SetActive(true);
+                counter2.SetActive(true);
+                Line2.SetActive(false);
+                counter3.SetActive(false);
+                break;
+            case 0:
+                counter1.SetActive(true);
+                Line1.SetActive(true);
+                counter2.SetActive(true);
+                Line2.SetActive(true);
+                counter3.SetActive(true);
+                break;
         }
     }
     void GoHome()
@@ -100,4 +135,5 @@ public class BattleManager : MonoBehaviour
         attacked.SetActive(false);
         idle.SetActive(true);
     }
+
 }

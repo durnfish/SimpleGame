@@ -17,6 +17,7 @@ public class PlayerObject : MonoBehaviour
 
     // 레벨 관련 필드
     int level;
+    internal int index = 0;//몬스터 카운터 수
 
     private void Awake()
     {

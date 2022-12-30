@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyObject : MonoBehaviour
 {
@@ -10,9 +11,10 @@ public class EnemyObject : MonoBehaviour
     [SerializeField] internal float maxHp;// 최대 체력
     [SerializeField] internal float enemyATKPoint;//몬스터 공격력
     [SerializeField] internal float attackSpeed;//몬스터 공격속도 구현 여부?
-    [SerializeField] internal float level;//몬스터 강함 척도
+    [SerializeField] internal float level = 0;//몬스터 강함 척도
     [SerializeField] internal float exp; // 죽었을 때 플레이어에게 주는 경험치
     [SerializeField] internal float gold;// 몬스터가 떨구는 골드
+    [SerializeField] Text levelText;
 
     private void Awake()
     {
@@ -24,13 +26,18 @@ public class EnemyObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        level = PlayerObject.player.index / 3 + 1;
+        currentHp = currentHp * level;
+        maxHp = maxHp * level;
+        enemyATKPoint = enemyATKPoint * level;
+        exp = exp * level / 2;
+        gold = gold * level / 2;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        ShowLevel();
     }
     //체력 관리 함수
     public void HpUpChanger(float changeHp) //체력 회복 함수
@@ -58,5 +65,10 @@ public class EnemyObject : MonoBehaviour
     public void MaxHpDown(float changeHp)// 최대체력 감소
     {
         maxHp -= changeHp;
+    }
+
+    void ShowLevel()
+    {
+        levelText.text = "Lv: " + level;
     }
 }

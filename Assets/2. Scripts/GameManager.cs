@@ -6,10 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager gameManager;
     public GameObject map;
+    public int index;
     private void Awake()
     {
+        if(gameManager == null)
+        {
+            gameManager = this;
+        }
         Cursor.visible = true;
+        index = 0;
     }
     // Start is called before the first frame update
     void Start()
